@@ -1,5 +1,6 @@
 ///Lägg in sökväg för array, var ligger den??/////
-import { products, Product } from "./data/products.js";
+import type { Product } from "./data/products";
+import { products } from "./data/products";
 
 //Hämta produktID//
 function getProductId(): number | null {
