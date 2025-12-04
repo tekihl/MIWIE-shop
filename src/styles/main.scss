@@ -1,5 +1,203 @@
+@import './variables.scss';
 @import './components.scss';
 @import './layout.scss';
 @import './pages.scss';
-@import './variables.scss';
-@import 'bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: $sand;
+  color: $dark-brown;
+  margin: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  color: $dark-brown;
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: $warm-gray;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(245, 239, 230, 0.9);
+  box-shadow: 0 2px 20px rgba(62, 44, 30, 0.08);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $dark-brown;
+  text-decoration: none;
+}
+
+.main-nav {
+  ul {
+    display: flex;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.3rem;
+    border-radius: 999px;
+    color: $dark-brown;
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(62, 44, 30, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $terracotta;
+      color: #fff;
+      border-color: transparent;
+      box-shadow: $shadow;
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.95rem 1.9rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &--primary {
+    background: linear-gradient(135deg, $olive, $deep-olive);
+    color: #fff;
+    box-shadow: $shadow;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 4vw, 3rem);
+  background:
+    radial-gradient(circle at top right, rgba(193, 106, 62, 0.35), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(111, 143, 42, 0.4), transparent 45%),
+    linear-gradient(rgba(62, 44, 30, 0.45), rgba(62, 44, 30, 0.45)),
+    url("secondhand.png") center/cover no-repeat;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    border-radius: 20px;
+    background: $paper;
+    box-shadow: $shadow;
+    display: grid;
+    gap: 0.75rem;
+    max-width: 500px;
+  }
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    color: $terracotta;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    max-width: 450px;
+  }
+}
+
+footer {
+  background: #2a1c14;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 0;
+  margin-top: 3rem;
+
+  .footer__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  h4 {
+    margin-top: 0;
+    color: #fff;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer__brand {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header__inner {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__inner {
+    padding: 1.5rem;
+  }
+}
