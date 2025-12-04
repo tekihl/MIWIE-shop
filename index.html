@@ -1,38 +1,63 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MIWIE Shop | Second hand med värme</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="#hero" class="logo">MIWIE Shop</a>
+        <nav class="main-nav" aria-label="Huvudnavigation">
+          <ul>
+            <li><a href="#hero">Hem</a></li>
+            <li><a href="product-details.html">Produkter</a></li>
+            <li><a href="cart.html">Varukorg</a></li>
+            <li><a href="checkout.html">Kassa</a></li>
+          </ul>
+        </nav>  
+      </div>
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>miwie-shop</title>
-</head>
-
-<body>
-  <div id="app">
-    <div class="hero-wrapper">
-
-
-
-      <nav class="p-3 navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <div class="right-side-wrapper">
-
-            <button class="btn ">All Products</button>
-            <button class="btn ">Cart</button>
+    <main>
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="hero__inner">
+            <h1 class="hero__title">
+              MIWIE Shop – second hand med själ och värme.
+            </h1>
+            <p class="hero__text">
+              Ge hemmet och garderoben nytt liv med noga utvalda second
+              hand-favoriter
+            </p>
+            <a href="#hero" class="btn btn--primary">Se alla produkter</a>
           </div>
         </div>
-      </nav>
+      </section>
+    </main>
 
-
-
-
-
-
-    </div>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+    <footer>
+      <div class="container footer__grid">
+        <div>
+          <p class="footer__brand">MIWIE Shop</p>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p>Gustavslundsvägen 151 D, 167 51 Bromma</p>
+          <p>hej@miwie.se</p>
+          <p>08 - 643 20 10</p>
+        </div>
+        <div>
+          <h4>Öppettider</h4>
+          <p>Mån–Fre: 11.00–18.00</p>
+          <p>Lör: 11.00–16.00</p>
+          <p>Sön: Stängt</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src ="main.ts"></script>
+  </body>
 </html>
+  
