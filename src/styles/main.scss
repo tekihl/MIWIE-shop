@@ -155,12 +155,14 @@ p {
 
   &__text {
     max-width: 450px;
-  }h1,
-h2,
-h3 {
-  color: $dark-brown;
-  margin-top: 0;
-}
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: $dark-brown;
+    margin-top: 0;
+  }
 
 }
 
