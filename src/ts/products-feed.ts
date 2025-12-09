@@ -32,9 +32,7 @@ export const createHtml = () => {
       card.dataset.id = product.id.toString();
 
       cardWrap.addEventListener("click", () => {
-        window.location.assign(
-          "http://localhost:5175/product-details.html?id=" + product.id
-        );
+        window.location.assign("/product-details.html?id=" + product.id);
       });
     });
   }
