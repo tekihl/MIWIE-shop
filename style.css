@@ -39,6 +39,7 @@ p {
   background: rgba(245, 239, 230, 0.9);
   box-shadow: 0 2px 20px rgba(62, 44, 30, 0.08);
 }
+
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -62,6 +63,7 @@ p {
   margin: 0;
   padding: 0;
 }
+
 .main-nav a {
   display: inline-flex;
   align-items: center;
@@ -76,6 +78,7 @@ p {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
   transition: all 0.2s ease;
 }
+
 .main-nav a:hover,
 .main-nav a:focus-visible {
   background: #c16a3e;
@@ -98,11 +101,13 @@ p {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .btn--primary {
   background: linear-gradient(135deg, #6f8f2a, #4a5f1c);
   color: #fff;
   box-shadow: 0 20px 45px rgba(62, 44, 30, 0.15);
 }
+
 .btn--primary:hover {
   transform: translateY(-2px);
 }
@@ -110,19 +115,16 @@ p {
 .hero {
   position: relative;
   padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 4vw, 3rem);
-  background: radial-gradient(
-      circle at top right,
+  background: radial-gradient(circle at top right,
       rgba(193, 106, 62, 0.35),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at bottom left,
+      transparent 55%),
+    radial-gradient(circle at bottom left,
       rgba(111, 143, 42, 0.4),
-      transparent 45%
-    ),
+      transparent 45%),
     linear-gradient(rgba(62, 44, 30, 0.45), rgba(62, 44, 30, 0.45)),
     url("secondhand.png") center/cover no-repeat;
 }
+
 .hero__inner {
   position: relative;
   z-index: 1;
@@ -134,16 +136,19 @@ p {
   gap: 0.75rem;
   max-width: 500px;
 }
+
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.8rem;
   color: #c16a3e;
 }
+
 .hero__title {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   margin-bottom: 0.5rem;
 }
+
 .hero__text {
   max-width: 450px;
 }
@@ -154,19 +159,23 @@ footer {
   padding: 2.5rem 0;
   margin-top: 3rem;
 }
+
 footer .footer__grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
 footer h4 {
   margin-top: 0;
   color: #fff;
 }
+
 footer p {
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 0.4rem;
 }
+
 footer .footer__brand {
   font-weight: 700;
   font-size: 1.2rem;
@@ -178,10 +187,12 @@ footer .footer__brand {
     flex-direction: column;
     gap: 0.8rem;
   }
+
   .main-nav ul {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .hero__inner {
     padding: 1.5rem;
   }
