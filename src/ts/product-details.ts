@@ -1,5 +1,7 @@
 import type { Product } from "./models";
 import { products } from "./product";
+import { addToCart } from "./cart";
+import { getCart } from "./cart";
 
 const createDetailHtml = () => {
   const params = new URLSearchParams(window.location.search);
@@ -24,7 +26,13 @@ const createDetailHtml = () => {
   <h1>${product.title}</h1>
   <p>${product.description}</p>
   <p class="price">${product.price} SEK</p>
+  <button id="addToCart--button"> Add To Cart</button>
   </section> `;
+
+  document.getElementById("addToCart--button")?.addEventListener("click", () => {
+    addToCart(product.id); // ← hard-coded productId to test
+    console.log(getCart());
+  });
 };
 
 createDetailHtml();
