@@ -26,7 +26,9 @@ export function renderCart() {
     div.innerHTML = `
         <div class="cart-item__info">
         <p>${product.title}</p>
-        <p>${product.price}</p>
+        <p>${item.quantity}x${product.price} SEK=${
+      item.quantity * product.price
+    } SEK</p>
         </div>
 
         <div class="cart-item__controls">
