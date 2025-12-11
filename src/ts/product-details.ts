@@ -26,7 +26,10 @@ const createDetailHtml = () => {
   <h1>${product.title}</h1>
   <p>${product.description}</p>
   <p class="price">${product.price} SEK</p>
-  <button id="addToCart--button">Add To Cart</button>
+  <button id="addToCart--button" class="btn btn--primary">Lägg till i varukorg </button>
+  <a href="products-feed.html" class="btn btn--primary">
+  Fortsätt handla
+  </a>
   </section> `;
 
   document
@@ -34,7 +37,7 @@ const createDetailHtml = () => {
     ?.addEventListener("click", () => {
       addToCart(product.id);
       updateCartCount();
-      alert(`${product.title} lades till i varukorgen`);
+      //alert(`${product.title} lades till i varukorgen`);
     });
 };
 
