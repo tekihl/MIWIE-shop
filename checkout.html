@@ -15,7 +15,7 @@
           <ul>
             <li><a href="index.html">Hem</a></li>
             <li><a href="products-feed.html">Produkter</a></li>
-            <li><a href="cart.html">Varukorg</a></li>
+            <a href="cart.html">Varukorg(<span id="cart-count">0</span>)</a>
             <li><a href="checkout.html">Kassa</a></li>
           </ul>
         </nav>
@@ -83,7 +83,11 @@
           </div>
 
           <div class="checkout-actions">
-            <button type="button" id="complete-purchase" class="btn btn--primary">
+            <button
+              type="button"
+              id="complete-purchase"
+              class="btn btn--primary"
+            >
               Slutför köp
             </button>
           </div>
@@ -118,5 +122,6 @@
           window.location.href = "order-confirmation.html";
         });
     </script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

@@ -1,73 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Varukorg | MIWIE Shop</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="site-header">
-        <div class="container site-header__inner">
-            <a href="index.html" class="logo">MIWIE Shop</a>
-            <nav class="main-nav" aria-label="Huvudnavigation">
-                <ul>
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="products-feed.html">Produkter</a></li>
-                    <li><a href="cart.html">Varukorg</a></li>
-                    <li><a href="checkout.html">Kassa</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container site-header__inner">
+        <a href="index.html" class="logo">MIWIE Shop</a>
+        <nav class="main-nav" aria-label="Huvudnavigation">
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="products-feed.html">Produkter</a></li>
+            <a href="cart.html">Varukorg(<span id="cart-count">0</span>)</a>
+            <li><a href="checkout.html">Kassa</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero__inner">
-                    <h1 class="hero__title">Varukorg</h1>
-                    <p class="hero__text">Granska dina varor innan du går vidare till kassan.</p>
-                </div>
-            </div>
-        </section>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__inner">
+            <h1 class="hero__title">Varukorg</h1>
+            <p class="hero__text">
+              Granska dina varor innan du går vidare till kassan.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section class="container stack">
-            <div class="content-card">
-                <div id="cart-items" class="stack">
-                    <p>Din varukorg är tom.</p>
-                </div>
-                <div class="stack" style="margin-top: 1rem;">
-                    <a class="btn btn--primary" href="products-feed.html">Fortsätt handla</a>
-                    <a class="btn" href="checkout.html">Till kassan</a>
-                </div>
-            </div>
-        </section>
+      <section class="container stack">
+        <div class="content-card">
+          <div id="cart-items" class="stack">
+            <p>Din varukorg är tom.</p>
+          </div>
+          <div class="stack" style="margin-top: 1rem">
+            <a class="btn btn--primary" href="products-feed.html"
+              >Fortsätt handla</a
+            >
+            <a class="btn" href="checkout.html">Till kassan</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container footer__grid">
-            <div>
-                <p class="footer__brand">MIWIE Shop</p>
-            </div>
-            <div>
-                <h4>Kontakt</h4>
-                <p>Gustavslundsvägen 151 D, 167 51 Bromma</p>
-                <p>Miwieshop@miwie.se</p>
-                <p>08 - 643 20 10</p>
-            </div>
-            <div>
-                <h4>Öppettider</h4>
-                <p>Mån–Fre: 11.00–18.00</p>
-                <p>Lör: 11.00–16.00</p>
-                <p>Sön: Stängt</p>
-            </div>
+      <div class="container footer__grid">
+        <div>
+          <p class="footer__brand">MIWIE Shop</p>
         </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p>Gustavslundsvägen 151 D, 167 51 Bromma</p>
+          <p>Miwieshop@miwie.se</p>
+          <p>08 - 643 20 10</p>
+        </div>
+        <div>
+          <h4>Öppettider</h4>
+          <p>Mån–Fre: 11.00–18.00</p>
+          <p>Lör: 11.00–16.00</p>
+          <p>Sön: Stängt</p>
+        </div>
+      </div>
     </footer>
 
     <script type="module" src="./src/main.ts"></script>
-
-</body>
-
+  </body>
 </html>
