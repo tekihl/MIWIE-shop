@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kassa | MIWIE Shop</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="index.html" class="logo">MIWIE Shop</a>
+        <nav class="main-nav" aria-label="Huvudnavigation">
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="products-feed.html">Produkter</a></li>
+            <li><a href="cart.html">Varukorg</a></li>
+            <li><a href="checkout.html">Kassa</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__inner">
+            <h1 class="hero__title">Kassa</h1>
+            <p class="hero__text">Fyll i dina uppgifter och bekräfta köpet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container checkout-layout">
+        <div class="checkout-form-wrapper">
+          <div class="content-card">
+            <h3 class="section-title">Leveransuppgifter</h3>
+            <form id="checkout-form" class="checkout-form">
+              <div class="form-row">
+                <label>
+                  <span>Namn</span>
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  <span>E-post</span>
+                  <input type="email" name="email" required />
+                </label>
+              </div>
+              <label>
+                <span>Adress</span>
+                <input type="text" name="address" required />
+              </label>
+              <div class="form-row">
+                <label>
+                  <span>Postnummer</span>
+                  <input type="text" name="zip" required />
+                </label>
+                <label>
+                  <span>Ort</span>
+                  <input type="text" name="city" required />
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <div class="content-card">
+            <h3 class="section-title">Betalningsalternativ</h3>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card" required />
+                <span>Kort</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="swish" required />
+                <span>Swish</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="invoice" required />
+                <span>Faktura</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="button" id="complete-purchase" class="btn btn--primary">
+              Slutför köp
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer__grid">
+        <div>
+          <p class="footer__brand">MIWIE Shop</p>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p>Gustavslundsvägen 151 D, 167 51 Bromma</p>
+          <p>Miwieshop@miwie.se</p>
+          <p>08 - 643 20 10</p>
+        </div>
+        <div>
+          <h4>Öppettider</h4>
+          <p>Mån–Fre: 11.00–18.00</p>
+          <p>Lör: 11.00–16.00</p>
+          <p>Sön: Stängt</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("complete-purchase")
+        ?.addEventListener("click", () => {
+          window.location.href = "order-confirmation.html";
+        });
+    </script>
+  </body>
+</html>

@@ -1,26 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>miwie-shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Produktdetaljer | MIWIE Shop</title>
   </head>
 
   <body>
-    <nav class="p-3 navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <div class="right-side-wrapper">
-          <button class="btn">All Products</button>
-          <button class="btn">Cart</button>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="index.html" class="logo">MIWIE Shop</a>
+        <nav class="main-nav" aria-label="Huvudnavigation">
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="products-feed.html">Produkter</a></li>
+            <li><a href="cart.html">Varukorg</a></li>
+            <li><a href="checkout.html">Kassa</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__inner">
+            <h1 class="hero__title">Produktdetaljer</h1>
+            <p class="hero__text">Läs mer om produkten innan du lägger den i varukorgen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container stack">
+        <div id="product-details" class="content-card"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer__grid">
+        <div>
+          <p class="footer__brand">MIWIE Shop</p>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p>Gustavslundsvägen 151 D, 167 51 Bromma</p>
+          <p>Miwieshop@miwie.se</p>
+          <p>08 - 643 20 10</p>
+        </div>
+        <div>
+          <h4>Öppettider</h4>
+          <p>Mån–Fre: 11.00–18.00</p>
+          <p>Lör: 11.00–16.00</p>
+          <p>Sön: Stängt</p>
         </div>
       </div>
-    </nav>
+    </footer>
 
-    <div id="product-details"></div>
-
-    <script type="module" src="/src/main.ts"></script>
-    <script type="module" src="/src/ts/product-details.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
+    <script type="module" src="./src/ts/product-details.ts"></script>
   </body>
 </html>
