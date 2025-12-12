@@ -33,6 +33,7 @@ const createDetailHtml = () => {
     addToCart(product.id); // ← hard-coded productId to test
     console.log(getCart());
   });
+
 };
 
 createDetailHtml();

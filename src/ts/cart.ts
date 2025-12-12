@@ -6,6 +6,22 @@ export function getCart(): CartItem[] {
     return cart;
 }
 
+export function saveCartToStorage() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function loadCartFromStorage() {
+  const data = localStorage.getItem("cart");
+  if (!data) return;
+
+  try {
+    cart = JSON.parse(data) as CartItem[];
+  } catch (error) {
+    console.error("Failed to parse cart from storage", error);
+    cart = [];
+  }
+}
+
 export function addToCart(productId: number) {
     const existingItem = cart.find((item) => item.productId === productId);
 
@@ -14,10 +30,12 @@ export function addToCart(productId: number) {
     } else {
         cart.push({ productId, quantity: 1 });
     }
+    saveCartToStorage();
 }
 
 export function removeFromCart(productId: number) {
-  cart = cart.filter((item) => item.productId !== productId);
+    cart = cart.filter((item) => item.productId !== productId);
+    saveCartToStorage();
 }
 
 

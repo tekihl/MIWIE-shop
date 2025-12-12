@@ -3,9 +3,12 @@ import './styles/main.scss'
 import { getCart } from './ts/cart';
 import { addToCart } from './ts/cart';
 import { removeFromCart } from './ts/cart';
+import { loadCartFromStorage } from './ts/cart';
 
 //createHtml();
 getCart();
+loadCartFromStorage();
+
 
 document.getElementById("mock-add")?.addEventListener("click", () => {
   addToCart(1); // ← hard-coded productId to test
