@@ -8,11 +8,19 @@ export function renderCheckout() {
   if (!container) return;
 
   const cartItems = getCart();
+  const completeButton = document.getElementById("complete-purchase") as HTMLButtonElement;
 
   if (cartItems.length === 0) {
     container.innerHTML = "<h2>Varukorg</h2><p>Din varukorg är tom.</p>";
     updateCartCount();
+    if (completeButton) {
+      completeButton.disabled = true;
+    }
     return;
+  }
+
+  if (completeButton) {
+    completeButton.disabled = false;
   }
   let html = `<h2>Varukorg</h2>`;
   let total = 0;
@@ -65,6 +73,7 @@ if (checkoutContainer) {
       addToCart(id);
       updateCartCount();
       renderCheckout();
+      updateCompleteButtonState();
     }
 
     //Minska antal
@@ -76,6 +85,7 @@ if (checkoutContainer) {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
         renderCheckout();
+        updateCompleteButtonState();
       }
     }
 
@@ -84,19 +94,32 @@ if (checkoutContainer) {
       removeFromCart(id);
       updateCartCount();
       renderCheckout();
+      updateCompleteButtonState();
     }
   });
 }
 
-//Gå vidare till köp
+//Uppdatera knappens tillstånd baserat på varukorg
+function updateCompleteButtonState() {
+  const completeButton = document.getElementById("complete-purchase") as HTMLButtonElement;
+  const cartItems = getCart();
+  if (completeButton) {
+    completeButton.disabled = cartItems.length === 0;
+  }
+}
 
+//Gå vidare till köp
 const completeButton = document.getElementById("complete-purchase");
-completeButton?.addEventListener("click", () => {
-  cart.length = 0;
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  renderCheckout();
+completeButton?.addEventListener("click", (e) => {
+  const button = e.target as HTMLButtonElement;
+  if (!button.disabled) {
+    cart.length = 0;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    window.location.href = "order-confirmation.html";
+  }
 });
 
 renderCheckout();
 updateCartCount();
+updateCompleteButtonState();

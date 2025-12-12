@@ -83,7 +83,7 @@ export function renderCart() {
 
   //Rensa varukorg
   const clearBtn = document.createElement("button");
-  clearBtn.className = "btn btn--primary";
+  clearBtn.className = "btn btn-dark";
   clearBtn.textContent = "Rensa varukorg";
   clearBtn.addEventListener("click", () => {
     cart.length = 0;
