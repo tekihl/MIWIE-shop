@@ -1,5 +1,6 @@
 import { getCart, cart, addToCart, removeFromCart } from "./cart";
 import { products } from "./product";
+import { updateCartCount } from "./cart-count";
 
 //Rendera varukorg
 export function renderCart() {
@@ -10,6 +11,7 @@ export function renderCart() {
 
   if (cartItems.length === 0) {
     container.innerHTML = "<p>Din varukorg är tom</p>";
+    updateCartCount();
     return;
   }
 
@@ -44,18 +46,21 @@ export function renderCart() {
     //Öka antal
     div.querySelector(".increase-btn")?.addEventListener("click", () => {
       addToCart(product.id);
+      updateCartCount();
       renderCart();
     });
 
     //Minska antal
     div.querySelector(".decrease-btn")?.addEventListener("click", () => {
       const cartItem = cart.find((c) => c.productId === product.id);
-      if (cartItem) {
+
+      if (cartItem && cartItem.quantity > 1) {
         cartItem.quantity -= 1;
         if (cartItem.quantity <= 0) {
           removeFromCart(product.id);
         }
         localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
         renderCart();
       }
     });
@@ -64,6 +69,7 @@ export function renderCart() {
 
     div.querySelector(".remove-btn")?.addEventListener("click", () => {
       removeFromCart(product.id);
+      updateCartCount();
       renderCart();
     });
     total += product.price * item.quantity;
@@ -82,8 +88,10 @@ export function renderCart() {
   clearBtn.addEventListener("click", () => {
     cart.length = 0;
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
     renderCart();
   });
   container.appendChild(clearBtn);
 }
 renderCart();
+updateCartCount();
